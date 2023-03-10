@@ -1,0 +1,76 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.5vw;
+}
+
+.bayan-button {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bayan-mem{
+  margin: 5px 0;
+}
+.bayan-image-block{
+  transition: all 0.5s;
+  overflow: hidden;
+  max-height: 0;
+}
+.image-block{
+  display: flex;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.5s;
+}
+
+.bayan-image{
+  width: 25vw;
+  margin: 3vh 0;
+}
+
+.bayan-header{
+  border-radius: 20px;
+  padding:10px 20px;
+  transition: all 0.5s;
+  background-color: rgb(171, 171, 171);
+}
+
+input[type="radio"]:checked ~.bayan-header{
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+input[type="radio"]:checked .bayan-mem{
+  background-color: rgb(39, 39, 39);
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+input[type="radio"]:checked ~ .bayan-image-block{
+  max-height: 80vh;
+}
+
+input[type="radio"]:checked ~ .bayan-image-block .image-block{
+  transform: scale(1);
+}
+
