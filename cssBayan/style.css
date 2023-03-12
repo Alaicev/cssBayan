@@ -8,10 +8,14 @@ html {
   font-size: 1.5vw;
 }
 
-.bayan-button {
-  width: 5px;
-  height: 5px;
-  background-color: black;
+body {
+  background-color: rgb(230, 230, 171);
+}
+
+.button-image{
+  width: 2vw;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 label {
@@ -21,18 +25,20 @@ label {
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 80vw;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 3vw;
 }
 
 .bayan-mem{
-  margin: 5px 0;
+  margin: 2vw 0;
 }
 .bayan-image-block{
   transition: all 0.5s;
   overflow: hidden;
   max-height: 0;
+  border-bottom-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
 }
 .image-block{
   display: flex;
@@ -42,35 +48,109 @@ label {
 }
 
 .bayan-image{
-  width: 25vw;
+  width: 20vw;
   margin: 3vh 0;
 }
 
-.bayan-header{
-  border-radius: 20px;
-  padding:10px 20px;
+.bayan-header label{
+  border-radius: 3vw;
+  padding:1vw 3vw;
   transition: all 0.5s;
   background-color: rgb(171, 171, 171);
 }
 
-input[type="radio"]:checked ~.bayan-header{
-  background-color: rgb(39, 39, 39);
-  color: white;
+.bayan-block:hover .button-image {
+  opacity: 1;
 }
 
-input[type="radio"]:checked .bayan-mem{
-  background-color: rgb(39, 39, 39);
+input[type="radio"]:hover ~.bayan-header label{
+  background-color: rgb(126, 126, 144);
+  cursor: pointer;
 }
+
+input[type="radio"]:checked ~.bayan-header label{
+  background-color: rgb(73, 73, 98);
+  color: white;
+  cursor: auto;
+}
+
 
 input[type="radio"]{
   display: none;
 }
 
+p{
+  transition: all 0.2s;
+}
+
+input[type="radio"]:hover ~ .bayan-image-block label{
+  cursor: pointer;
+}
+
+input[type="radio"]:checked ~ .bayan-image-block label{
+  cursor: auto;
+}
+input[type="radio"]:checked ~ .bayan-header p{
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
 input[type="radio"]:checked ~ .bayan-image-block{
   max-height: 80vh;
+  cursor: auto;
 }
 
 input[type="radio"]:checked ~ .bayan-image-block .image-block{
   transform: scale(1);
 }
 
+input[type="radio"]:checked ~ .bayan-header .button-image {
+  transform: rotate(-90deg);
+}
+
+.bayan-mem:hover .bayan-image-block{
+  max-height: 80vh;
+}
+
+.bayan-mem:hover .image-block{
+  transform: scale(1);
+}
+
+
+@media screen and (max-width: 820px) {
+  .bayan-mem:hover .bayan-image-block{
+    max-height: 0;
+  }
+  .bayan-mem:hover .image-block{
+    transform: scale(0);
+  }
+  input[type="radio"]:hover ~ .bayan-image-block label{
+    cursor: auto;
+  }
+  input[type="radio"]:hover ~.bayan-header label{
+    background-color: rgb(171, 171, 171);
+    cursor: auto;
+  }
+ .button-image {
+    opacity: 1;
+  }
+  input[type="radio"]:checked ~.bayan-header label{
+    background-color: rgb(73, 73, 98);
+    color: white;;
+    cursor: auto;
+  }
+  .bayan-image{
+    width: 30vw;
+    margin: 3vh 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    text-align: center;
+  }
+  .bayan-header label {
+    flex-direction: column;
+    gap: 2vw;
+  }
+}
