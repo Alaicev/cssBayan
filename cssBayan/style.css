@@ -103,6 +103,12 @@ input[type="radio"]:checked ~ .bayan-image-block .image-block{
   transform: scale(1);
 }
 
+
+
+input[type="radio"]:hover ~ .bayan-header .button-image {
+  transform: rotate(-90deg);
+}
+
 input[type="radio"]:checked ~ .bayan-header .button-image {
   transform: rotate(-90deg);
 }
@@ -117,7 +123,12 @@ input[type="radio"]:checked ~ .bayan-header .button-image {
 
 
 @media screen and (max-width: 820px) {
- 
+  input[type="radio"]:hover ~ .bayan-header .button-image {
+    transform: rotate(0);
+  }
+  input[type="radio"]:checked ~ .bayan-header .button-image {
+    transform: rotate(-90deg);
+  }
   .wrapper {
     max-width: 90vw;
   }
